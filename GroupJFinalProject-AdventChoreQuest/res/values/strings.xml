@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">GroupJ Final Project - AdventChore Quest</string>
+    <string name="app_name">AdventChore Quest</string>
     <string name="action_settings">Settings</string>
     <string name="hello_world">Hello world!</string>
+    <string name="progressDescription">Progress to Next Level</string>
+    <string name="title">Sir %1$s</string>
+    <string name="leveldesc">Level %1$d %2$s %3$s</string>
 
 </resources>
