@@ -1,0 +1,137 @@
+ <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".taskadd" >
+
+    <ImageButton
+        android:id="@+id/back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/assign"
+        android:background="@android:color/transparent"
+        android:src="@drawable/back" />
+
+    <ImageButton
+        android:id="@+id/commontasksicon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:background="@android:color/transparent"
+        android:src="@drawable/commontasks" />
+
+    <TextView
+        android:id="@+id/taskname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/TextView01"
+        android:layout_alignTop="@+id/commontasksicon"
+        android:text="Task Name" />
+
+    <EditText
+        android:id="@+id/nameoftask"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/back"
+        android:layout_below="@+id/textView1"
+        android:layout_marginTop="14dp"
+        android:ems="10" />
+
+    <ImageButton
+        android:id="@+id/assign"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/dateicon"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="26dp"
+        android:background="@android:color/transparent"
+        android:src="@drawable/assign" />
+
+    <CheckBox
+        android:id="@+id/Repeatedcheck"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/back"
+        android:layout_alignLeft="@+id/TextView01"
+        android:layout_marginBottom="46dp"
+        android:layout_marginLeft="14dp"
+        android:text="Repeated Task" />
+
+    <EditText
+        android:id="@+id/editText2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/duedate"
+        android:layout_alignLeft="@+id/choosechild"
+        android:ems="10"
+        android:inputType="number" >
+
+        <requestFocus />
+    </EditText>
+
+    <TextView
+        android:id="@+id/points"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/editText2"
+        android:layout_alignRight="@+id/back"
+        android:text="Points" />
+
+    <TextView
+        android:id="@+id/childName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/points"
+        android:layout_below="@+id/editText1"
+        android:layout_marginTop="26dp"
+        android:text="Child" />
+
+    <TextView
+        android:id="@+id/TextView01"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/childName"
+        android:layout_below="@+id/nameoftask"
+        android:layout_marginTop="18dp"
+        android:text="Description" />
+
+    <EditText
+        android:id="@+id/editText1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/choosechild"
+        android:layout_alignLeft="@+id/nameoftask"
+        android:ems="10"
+        android:inputType="textMultiLine" />
+
+    <ImageView
+        android:id="@+id/dateicon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/Repeatedcheck"
+        android:layout_marginTop="14dp"
+        android:layout_toRightOf="@+id/editText1"
+        android:src="@drawable/date" />
+
+    <TextView
+        android:id="@+id/duedate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/Repeatedcheck"
+        android:layout_toLeftOf="@+id/commontasksicon"
+        android:text="Due" />
+
+    <Spinner
+        android:id="@+id/choosechild"
+        android:layout_width="160dp"
+        android:layout_height="50dp"
+        android:layout_above="@+id/points"
+        android:layout_marginBottom="16dp"
+        android:layout_toLeftOf="@+id/commontasksicon" />
+
+</RelativeLayout>
