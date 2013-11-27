@@ -149,12 +149,14 @@ public class MainActivity extends Activity {
         reward.add("Jennifer: " + "Hello Kity");
         reward.add("Jack: " + "Play Time");
         reward.add("James: " + "League of Legends");
+       
+        // Adding child data
         listDataDisplay.add("Task List");
         listDataDisplay.add("Reward List");
-        // Adding child data
         listDataHeader.add("You have " +complete.size() + " tasks to be reviewed");
         listDataHeader.add("You have " +reward.size() + " rewards to be assigned");
-        listDataChild.put(listDataHeader.get(0), complete); // Header, Child data
+        // adding header, child data
+        listDataChild.put(listDataHeader.get(0), complete); 
         listDataChild.put(listDataHeader.get(1), reward);
        
 
