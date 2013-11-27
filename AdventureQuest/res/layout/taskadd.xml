@@ -6,15 +6,8 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
+    android:background = "@drawable/graybackground"
     tools:context=".taskadd" >
-
-    <ImageButton
-        android:id="@+id/back"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/assign"
-        android:background="@android:color/transparent"
-        android:src="@drawable/back" />
 
     <ImageButton
         android:id="@+id/commontasksicon"
@@ -42,16 +35,6 @@
         android:layout_marginTop="14dp"
         android:ems="10" />
 
-    <CheckBox
-        android:id="@+id/Repeatedcheck"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/back"
-        android:layout_alignLeft="@+id/TextView01"
-        android:layout_marginBottom="46dp"
-        android:layout_marginLeft="14dp"
-        android:text="Repeated Task" />
-
     <TextView
         android:id="@+id/childName"
         android:layout_width="wrap_content"
@@ -61,46 +44,6 @@
         android:layout_marginTop="26dp"
         android:text="Child" />
 
-    <TextView
-        android:id="@+id/TextView01"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/childName"
-        android:layout_below="@+id/nameoftask"
-        android:layout_marginTop="18dp"
-        android:text="Description" />
-
-    <TextView
-        android:id="@+id/points"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/editText2"
-        android:layout_alignRight="@+id/back"
-        android:text="Points" />
-
-    <EditText
-        android:id="@+id/editText1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/nameoftask"
-        android:layout_below="@+id/TextView01"
-        android:layout_marginTop="15dp"
-        android:ems="10"
-        android:inputType="textMultiLine" />
-
-    <EditText
-        android:id="@+id/editText2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/Repeatedcheck"
-        android:layout_alignLeft="@+id/choosechild"
-        android:layout_marginBottom="26dp"
-        android:ems="10"
-        android:inputType="number" >
-
-        <requestFocus />
-    </EditText>
-
     <Spinner
         android:id="@+id/choosechild"
         android:layout_width="160dp"
@@ -109,41 +52,93 @@
         android:layout_toRightOf="@+id/taskname" />
 
     <ImageButton
+        android:id="@+id/back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:background="@android:color/transparent"
+        android:src="@drawable/back" />
+
+    <ImageButton
         android:id="@+id/assign"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="17dp"
-        android:layout_toRightOf="@+id/choosechild"
+        android:layout_alignRight="@+id/ShowMyDate"
         android:background="@android:color/transparent"
         android:src="@drawable/assign" />
 
     <EditText
-        android:id="@+id/EditText01"
+        android:id="@+id/ShowMyDate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/duedate"
-        android:layout_alignBottom="@+id/duedate"
-        android:layout_alignParentRight="true"
+        android:layout_alignBottom="@+id/dateicon"
         android:layout_toRightOf="@+id/Repeatedcheck"
-        android:ems="10" />
+        android:ems="10"
+        android:inputType="date" />
+
+    <EditText
+        android:id="@+id/editText1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/nameoftask"
+        android:layout_below="@+id/TextView01"
+        android:ems="10"
+        android:inputType="textMultiLine" />
+
+    <TextView
+        android:id="@+id/TextView01"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/duedate"
+        android:layout_below="@+id/nameoftask"
+        android:text="Description" />
+
+    <TextView
+        android:id="@+id/points"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/editText2"
+        android:layout_alignBottom="@+id/editText2"
+        android:layout_alignLeft="@+id/TextView01"
+        android:text="Points" />
+
+    <EditText
+        android:id="@+id/editText2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/choosechild"
+        android:layout_marginTop="14dp"
+        android:layout_toRightOf="@+id/TextView01"
+        android:ems="10"
+        android:inputType="number" />
+
+    <ImageButton
+        android:id="@+id/dateicon"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_alignBottom="@+id/duedate"
+        android:layout_alignRight="@+id/Repeatedcheck"
+        android:layout_marginRight="14dp"
+        android:src="@drawable/date" />
 
     <TextView
         android:id="@+id/duedate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/dateicon"
-        android:layout_alignParentLeft="true"
-        android:layout_marginBottom="14dp"
+        android:layout_alignLeft="@+id/back"
+        android:layout_below="@+id/Repeatedcheck"
+        android:layout_marginTop="33dp"
         android:text="Choose Date" />
 
-    <ImageView
-        android:id="@+id/dateicon"
+    <CheckBox
+        android:id="@+id/Repeatedcheck"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/back"
-        android:layout_alignLeft="@+id/editText2"
-        android:layout_marginLeft="14dp"
-        android:src="@drawable/date" />
+        android:layout_alignLeft="@+id/duedate"
+        android:layout_below="@+id/editText2"
+        android:layout_marginTop="15dp"
+        android:text="Repeated Task" />
 
 </RelativeLayout>

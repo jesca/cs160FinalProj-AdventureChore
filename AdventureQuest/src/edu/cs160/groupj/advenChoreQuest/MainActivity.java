@@ -30,15 +30,24 @@ public class MainActivity extends Activity {
     List<String> listDataHeader;
     HashMap<String, List<String>> listDataChild;
     List<String> listDataDisplay;
+    Button button;
  
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         
+       button = (Button) findViewById(R.id.groups_button_bg);
+        button.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+            	Intent i = new Intent(MainActivity.this, taskadd.class);
+                startActivity(i);
+                
+            }
+        });
         // get the listview
         expListView = (ExpandableListView) findViewById(R.id.lvExp);
- 
+        
         // preparing list data
         prepareListData();
  
@@ -50,7 +59,7 @@ public class MainActivity extends Activity {
         final ActionBar actionBar = getActionBar();
         actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
         actionBar.addTab(actionBar.newTab().setText("Home").setTabListener(new TabListener<FragmentTab1>(this, "tab1",FragmentTab1.class)));
-        actionBar.addTab(actionBar.newTab().setText("Children").setTabListener(new TabListener<FragmentTab2>(this, "tab3",FragmentTab2.class)));
+        actionBar.addTab(actionBar.newTab().setText("Children").setTabListener(new TabListener<FragmentTab2>(this, "tab2",FragmentTab2.class)));
         expListView.expandGroup(0);       
         expListView.expandGroup(1);
         
@@ -59,14 +68,7 @@ public class MainActivity extends Activity {
         	actionBar.setSelectedNavigationItem(savedInstanceState.getInt(
         	"selectedTab", 0));
         	}
-        final Button button = (Button) findViewById(R.id.groups_button_bg);
-        button.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-            	Intent i = new Intent(MainActivity.this, taskadd.class);
-                startActivity(i);
-                
-            }
-        });
+        
         // Listview Group click listener
         expListView.setOnGroupClickListener(new OnGroupClickListener() {
  

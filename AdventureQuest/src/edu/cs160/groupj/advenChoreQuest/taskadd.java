@@ -1,6 +1,9 @@
 package edu.cs160.groupj.advenChoreQuest;
 
+import java.util.Calendar;
+
 import android.app.Activity;
+import android.app.DatePickerDialog;
 import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,6 +12,7 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.DatePicker;
+import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -19,17 +23,44 @@ public class taskadd extends Activity {
 	ImageButton choosedate;
 	Button set;
 	DatePicker datep;
-	Integer month,day,year;
 	TextView date;
 	private Spinner childrenspinner;
 
+	private int mYear;
+	private int mMonth;
+	private int mDay;
+	static final int DATE_DIALOG_ID = 0;
 
+	private EditText mDateDisplay;
+	private ImageButton mPickDate;
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.taskadd);
-		
-	
+		EditText paragraph = (EditText) findViewById(R.id.editText1);
+		paragraph.setLines(3);
+		paragraph.setMaxLines(3);
+		EditText header = (EditText) findViewById(R.id.nameoftask);
+		header.setMaxLines(1);
+		header.setMaxEms(18);
+		mDateDisplay = (EditText) findViewById(R.id.ShowMyDate);        
+		    mPickDate = (ImageButton) findViewById(R.id.dateicon);
+		    
+		    mPickDate.setOnClickListener(new View.OnClickListener() {
+		        public void onClick(View v) {
+		            showDialog(DATE_DIALOG_ID);
+		        }
+		    });
+
+		    // get the current date
+		    final Calendar c = Calendar.getInstance();
+		    mYear = c.get(Calendar.YEAR);
+		    mMonth = c.get(Calendar.MONTH);
+		    mDay = c.get(Calendar.DAY_OF_MONTH);
+
+		    // display the current date
+		    updateDisplay();
 	//common task button activity
 			final ImageButton addtask = (ImageButton) findViewById(R.id.commontasksicon);
 	        addtask.setOnClickListener(new View.OnClickListener() {
@@ -129,5 +160,32 @@ public class taskadd extends Activity {
 		
 	
 	}
-
+	private void updateDisplay() {
+	    this.mDateDisplay.setText(
+	        new StringBuilder()
+	                // Month is 0 based so add 1
+	                .append(mMonth + 1).append("-")
+	                .append(mDay).append("-")
+	                .append(mYear).append(" "));
+	}
+	private DatePickerDialog.OnDateSetListener mDateSetListener =
+		    new DatePickerDialog.OnDateSetListener() {
+		        public void onDateSet(DatePicker view, int year, 
+		                              int monthOfYear, int dayOfMonth) {
+		            mYear = year;
+		            mMonth = monthOfYear;
+		            mDay = dayOfMonth;
+		            updateDisplay();
+		        }
+		    };
+		    @Override
+		    protected Dialog onCreateDialog(int id) {
+		       switch (id) {
+		       case DATE_DIALOG_ID:
+		          return new DatePickerDialog(this,
+		                    mDateSetListener,
+		                    mYear, mMonth, mDay);
+		       }
+		       return null;
+		    }
 }
