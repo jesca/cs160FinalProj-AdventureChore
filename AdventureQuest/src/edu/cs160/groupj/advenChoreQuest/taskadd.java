@@ -17,6 +17,7 @@ import android.widget.ImageButton;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.TimePicker;
+import android.widget.Toast;
 
 public class taskadd extends Activity {
 	Dialog datepicker;
@@ -41,7 +42,7 @@ public class taskadd extends Activity {
 		EditText paragraph = (EditText) findViewById(R.id.editText1);
 		paragraph.setLines(3);
 		paragraph.setMaxLines(3);
-		EditText header = (EditText) findViewById(R.id.nameoftask);
+		final EditText header = (EditText) findViewById(R.id.nameoftask);
 		header.setMaxLines(1);
 		header.setMaxEms(18);
 		mDateDisplay = (EditText) findViewById(R.id.ShowMyDate);        
@@ -80,6 +81,15 @@ public class taskadd extends Activity {
 	                  public void onClick(View v) {
 	                  	 Intent back = new Intent(taskadd.this, MainActivity.class);
 	                       startActivity(back);
+	                      // Perform action on click
+	                  }
+	              });
+	              final ImageButton ok = (ImageButton) findViewById(R.id.assign);
+	              ok.setOnClickListener(new View.OnClickListener() {
+	                  public void onClick(View v) {
+	                	  Toast.makeText(getApplicationContext(), "Task Assigned: " + header.getText(), Toast.LENGTH_SHORT).show();
+	                  	 Intent ok = new Intent(taskadd.this, MainActivity.class);
+	                       startActivity(ok);
 	                      // Perform action on click
 	                  }
 	              });
