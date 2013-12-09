@@ -1,21 +1,21 @@
-package edu.cs160.groupj.advenChoreQuest;
+package edu.berkeley.cs160.groupj.finalproject_adventchorequest;
 
 import android.os.Bundle;
 import android.app.Activity;
 import android.view.Menu;
 
-public class Commontasks extends Activity {
+public class CameraActivity extends Activity {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.commontasks);
+		setContentView(R.layout.activity_camera);
 	}
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.commontasks, menu);
+		getMenuInflater().inflate(R.menu.camera, menu);
 		return true;
 	}
 

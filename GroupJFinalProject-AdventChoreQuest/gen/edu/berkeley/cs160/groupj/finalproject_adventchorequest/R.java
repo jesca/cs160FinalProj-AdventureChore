@@ -1030,8 +1030,8 @@ containing a value of this type.
         public static final int back=0x7f05005e;
         public static final int beginning=0x7f050011;
         public static final int btnSet=0x7f050055;
-        public static final int button1=0x7f050044;
-        public static final int button2=0x7f050045;
+        public static final int button1=0x7f050045;
+        public static final int button2=0x7f050046;
         public static final int checkbox=0x7f05002d;
         public static final int childName=0x7f05005f;
         public static final int childleveltype=0x7f05003e;
@@ -1054,7 +1054,7 @@ containing a value of this type.
         public static final int end=0x7f050013;
         public static final int expand_activities_button=0x7f050026;
         public static final int expanded_menu=0x7f05002c;
-        public static final int groups_button_bg=0x7f050042;
+        public static final int groups_button_bg=0x7f050043;
         public static final int home=0x7f050014;
         public static final int homeAsUp=0x7f050005;
         public static final int homeName=0x7f05003d;
@@ -1074,7 +1074,7 @@ containing a value of this type.
         public static final int listView1=0x7f050041;
         public static final int listView2=0x7f050047;
         public static final int list_item=0x7f050029;
-        public static final int lvExp=0x7f050043;
+        public static final int lvExp=0x7f050044;
         public static final int middle=0x7f050012;
         public static final int nameoftask=0x7f05005d;
         public static final int never=0x7f050009;
@@ -1103,7 +1103,7 @@ containing a value of this type.
         public static final int submit_area=0x7f050039;
         public static final int tabMode=0x7f050002;
         public static final int taskname=0x7f05005c;
-        public static final int textView1=0x7f050046;
+        public static final int textView1=0x7f050042;
         public static final int textView2=0x7f05004e;
         public static final int title=0x7f05002b;
         public static final int top_action_bar=0x7f050020;
@@ -1160,31 +1160,35 @@ containing a value of this type.
         public static final int abc_popup_menu_item_layout=0x7f030014;
         public static final int abc_search_dropdown_item_icons_2line=0x7f030015;
         public static final int abc_search_view=0x7f030016;
-        public static final int activity_child_home_page=0x7f030017;
-        public static final int activity_main=0x7f030018;
-        public static final int activity_select=0x7f030019;
-        public static final int activity_select_task=0x7f03001a;
-        public static final int activity_task_selector=0x7f03001b;
-        public static final int commontasks=0x7f03001c;
-        public static final int datepicker=0x7f03001d;
-        public static final int list_group=0x7f03001e;
-        public static final int list_header=0x7f03001f;
-        public static final int list_item=0x7f030020;
-        public static final int listviewlayout=0x7f030021;
-        public static final int selectparentchild=0x7f030022;
-        public static final int simple=0x7f030023;
-        public static final int splitlist2=0x7f030024;
-        public static final int splitlistlayout=0x7f030025;
-        public static final int support_simple_spinner_dropdown_item=0x7f030026;
-        public static final int taskadd=0x7f030027;
+        public static final int activity_camera=0x7f030017;
+        public static final int activity_child_home_page=0x7f030018;
+        public static final int activity_chore=0x7f030019;
+        public static final int activity_main=0x7f03001a;
+        public static final int activity_select=0x7f03001b;
+        public static final int activity_select_task=0x7f03001c;
+        public static final int activity_task_selector=0x7f03001d;
+        public static final int commontasks=0x7f03001e;
+        public static final int datepicker=0x7f03001f;
+        public static final int list_group=0x7f030020;
+        public static final int list_header=0x7f030021;
+        public static final int list_item=0x7f030022;
+        public static final int listviewlayout=0x7f030023;
+        public static final int selectparentchild=0x7f030024;
+        public static final int simple=0x7f030025;
+        public static final int splitlist2=0x7f030026;
+        public static final int splitlistlayout=0x7f030027;
+        public static final int support_simple_spinner_dropdown_item=0x7f030028;
+        public static final int taskadd=0x7f030029;
     }
     public static final class menu {
         public static final int assign_task=0x7f0d0000;
-        public static final int child_home_page=0x7f0d0001;
-        public static final int commontasks=0x7f0d0002;
-        public static final int main=0x7f0d0003;
-        public static final int select=0x7f0d0004;
-        public static final int select_task=0x7f0d0005;
+        public static final int camera=0x7f0d0001;
+        public static final int child_home_page=0x7f0d0002;
+        public static final int chore=0x7f0d0003;
+        public static final int commontasks=0x7f0d0004;
+        public static final int main=0x7f0d0005;
+        public static final int select=0x7f0d0006;
+        public static final int select_task=0x7f0d0007;
     }
     public static final class string {
         /**  Content description for the action bar "home" affordance. [CHAR LIMIT=NONE] 
@@ -1234,6 +1238,8 @@ containing a value of this type.
         public static final int progressDescription=0x7f0a0010;
         public static final int selecttask=0x7f0a0018;
         public static final int title=0x7f0a0011;
+        public static final int title_activity_camera=0x7f0a001a;
+        public static final int title_activity_chore=0x7f0a0019;
         public static final int title_activity_commontasks=0x7f0a0014;
         public static final int title_activity_parent_home=0x7f0a0013;
         public static final int title_activity_select=0x7f0a0016;

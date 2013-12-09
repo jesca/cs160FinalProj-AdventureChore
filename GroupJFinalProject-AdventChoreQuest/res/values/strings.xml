@@ -22,5 +22,7 @@
     <string name="title_activity_select">SelectActivity</string>
     <string name="title_activity_select_task">SelectTask</string>
     <string name="selecttask">Select a Task</string>
+    <string name="title_activity_chore">ChoreActivity</string>
+    <string name="title_activity_camera">CameraActivity</string>
 
 </resources>

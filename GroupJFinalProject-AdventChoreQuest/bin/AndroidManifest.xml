@@ -56,6 +56,14 @@
             android:name="edu.berkeley.cs160.groupj.finalproject_adventchorequest.SelectTask"
             android:label="@string/title_activity_select_task" >
         </activity>
+        <activity
+            android:name="edu.berkeley.cs160.groupj.finalproject_adventchorequest.ChoreActivity"
+            android:label="@string/title_activity_chore" >
+        </activity>
+        <activity
+            android:name="edu.berkeley.cs160.groupj.finalproject_adventchorequest.CameraActivity"
+            android:label="@string/title_activity_camera" >
+        </activity>
     </application>
 
 </manifest>
