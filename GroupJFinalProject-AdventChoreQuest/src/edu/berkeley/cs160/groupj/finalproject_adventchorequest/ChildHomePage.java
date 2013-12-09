@@ -6,6 +6,7 @@ import java.util.Arrays;
 import android.os.Bundle;
 import android.app.ActionBar;
 import android.app.Activity;
+import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.drawable.Drawable;
 import android.support.v7.app.ActionBarActivity;
@@ -57,9 +58,9 @@ public class ChildHomePage extends ActionBarActivity {
         Drawable ticon3 = res.getDrawable(R.drawable.ic_launcher);
         final ListView listview = (ListView) findViewById(R.id.listView1);
         chores = new ArrayList<Task>();
-        chores.add(new Task("Do Dishes", 5, ticon1));
-        chores.add(new Task("Mow Lawn", 3, ticon2));
-        chores.add(new Task("Walk Dog", 5, ticon3));
+        chores.add(new Task("Mow Lawn","Get lawn mower and mow the lawn",2, ticon2));
+        chores.add(new Task("Do Dishes","Load the dishwasher.\nPut soap in.\nPress the start button.",2, ticon1));
+        chores.add(new Task("Walk Dog","Leash the dog, and walk her around the park.",5, ticon3));
         //chores = new ArrayList<String>(Arrays.asList("Rake Leaves - 2 point", "Vacuum - 3 points", "Garden - 7 points", "Walk Dog - 2 points", "Do Homework - 3 points", "Laundry - 5 points", "Dishes - 3 points", "Clean Room - 4 points", "Take Out Trash - 2 points"));
         //aadapt = new ArrayAdapter<String>(this, R.layout.listviewlayout, chores);
         tadapt = new TaskAdapter(this, chores);
@@ -69,6 +70,9 @@ public class ChildHomePage extends ActionBarActivity {
             @Override
             public void onItemClick(AdapterView parent, View v,
                     int position, long id) {
+            		Intent choreIntent = new Intent(ChildHomePage.this, ChoreActivity.class);
+            		choreIntent.putExtra("Task", chores.get(position));
+            		startActivity(choreIntent);
             }
         });
     }

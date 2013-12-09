@@ -24,5 +24,7 @@
     <string name="selecttask">Select a Task</string>
     <string name="title_activity_chore">ChoreActivity</string>
     <string name="title_activity_camera">CameraActivity</string>
+    <string name="completeChore">Finish</string>
+    <string name="chorePoints">%1$d Points </string>
 
 </resources>
