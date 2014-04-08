@@ -28,7 +28,8 @@ public class SelectTask extends Activity {
         actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
         actionBar.addTab(actionBar.newTab().setText("Home").setTabListener(new TabListener<FragmentTab1>(this, "tab1",FragmentTab1.class)));
         actionBar.addTab(actionBar.newTab().setText("Children").setTabListener(new TabListener<FragmentTab2>(this, "tab2",FragmentTab2.class)));
-		res = getResources();
+		actionBar.setTitle("Select a Chore to Assign");
+        res = getResources();
 		final ListView listview2 = (ListView) findViewById(R.id.listView2);
         tasks = new ArrayList<Task>();
         Drawable trash = res.getDrawable(R.drawable.trash);

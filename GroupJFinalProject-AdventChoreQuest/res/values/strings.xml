@@ -26,5 +26,13 @@
     <string name="title_activity_camera">CameraActivity</string>
     <string name="completeChore">Finish</string>
     <string name="chorePoints">%1$d Points </string>
+    <string name="status">Status: %1$s</string>
+    <string name="denyalert">You are marking this chore as INCOMPLETE. Please let your child know why.</string>
+    <string name="title_activity_confirm">Confirm</string>
+    <string name="instructions">Click a Quest to Complete</string>
+    <string name="title_activity_child_store">Store</string>
+    <string name="storeWelcome">Welcome Sir %1$s</string>
+    <string name="storeBalance">You have %1$d</string>
+    <string name="title_activity_confirm2">Confirm2</string>
 
 </resources>

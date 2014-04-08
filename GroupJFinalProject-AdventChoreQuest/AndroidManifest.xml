@@ -5,7 +5,7 @@
     android:versionName="1.0" >
 
     <uses-sdk
-        android:minSdkVersion="18"
+        android:minSdkVersion="11"
         android:targetSdkVersion="18" />
 
     <application
@@ -61,8 +61,20 @@
             android:label="@string/title_activity_chore" >
         </activity>
         <activity
+            android:name="edu.berkeley.cs160.groupj.finalproject_adventchorequest.Confirm"
+            android:label="@string/title_activity_confirm" >
+        </activity>
+        <activity
             android:name="edu.berkeley.cs160.groupj.finalproject_adventchorequest.CameraActivity"
             android:label="@string/title_activity_camera" >
+        </activity>
+        <activity
+            android:name="edu.berkeley.cs160.groupj.finalproject_adventchorequest.ChildStore"
+            android:label="@string/title_activity_child_store" >
+        </activity>
+        <activity
+            android:name="edu.berkeley.cs160.groupj.finalproject_adventchorequest.Confirm2"
+            android:label="@string/title_activity_confirm2" >
         </activity>
     </application>
 

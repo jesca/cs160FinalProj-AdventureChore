@@ -30,7 +30,7 @@ public class ChildHomePage extends ActionBarActivity {
 	private ProgressBar levelprogress;
 	private Resources res;
 	private TextView leveldesc;
-	private String name = "Kyle";
+	private String name = "James";
 	//private ArrayList<String> chores;
 	private ArrayList<Task> chores;
 	//private ArrayAdapter<String> aadapt;

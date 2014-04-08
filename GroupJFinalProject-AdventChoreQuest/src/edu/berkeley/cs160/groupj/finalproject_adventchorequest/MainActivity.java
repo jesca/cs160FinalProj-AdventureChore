@@ -4,14 +4,12 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-
-
 import android.app.ActionBar;
 import android.app.Activity;
 import android.content.Intent;
+import android.content.res.Resources;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ExpandableListView;
@@ -19,19 +17,21 @@ import android.widget.ExpandableListView.OnChildClickListener;
 import android.widget.ExpandableListView.OnGroupClickListener;
 import android.widget.ExpandableListView.OnGroupCollapseListener;
 import android.widget.ExpandableListView.OnGroupExpandListener;
-import android.widget.Toast;
-import edu.berkeley.cs160.groupj.finalproject_adventchorequest.TaskAdd;
-import edu.berkeley.cs160.groupj.finalproject_adventchorequest.R;
  
 public class MainActivity extends Activity {
  
     ExpandableListAdapter listAdapter;
     ExpandableListView expListView;
     List<String> listDataHeader;
-    HashMap<String, List<String>> listDataChild;
+    HashMap<String, List<Task>> listDataChild;
     List<String> listDataDisplay;
     Button button;
- 
+    ArrayList<Task> complete  = new ArrayList<Task>();
+    ArrayList<Task> reward = new ArrayList<Task>();
+    Drawable hi;
+    Resources res;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,12 +45,14 @@ public class MainActivity extends Activity {
                 
             }
         });
+        res = getResources();
         // get the listview
         expListView = (ExpandableListView) findViewById(R.id.lvExp);
-        
-        // preparing list data
+        expListView.setClickable(true);
+        hi = res.getDrawable(R.drawable.ic_launcher);
         prepareListData();
- 
+
+        
         listAdapter = new ExpandableListAdapter(this, listDataHeader, listDataChild);
  
         // setting list adapter
@@ -113,10 +115,15 @@ public class MainActivity extends Activity {
             @Override
             public boolean onChildClick(ExpandableListView parent, View v,
                     int groupPosition, int childPosition, long id) {
-                
-                return false;
+            	Intent confirmIntent = new Intent(MainActivity.this, Confirm2.class);
+            	if (groupPosition==0) {
+        		confirmIntent.putExtra("confirm", listDataChild.get(listDataHeader.get(groupPosition)).get(childPosition));
+        		startActivity(confirmIntent);
+            	}
+                return true;
             }
         });
+       
     }
     @Override
     protected void onSaveInstanceState(Bundle outState) {
@@ -128,27 +135,26 @@ public class MainActivity extends Activity {
      */
     private void prepareListData() {
         listDataHeader = new ArrayList<String>();
-        listDataChild = new HashMap<String, List<String>>();
- 
+        listDataChild = new HashMap<String, List<Task>>();
         listDataDisplay = new ArrayList<String>();
         
+        
+        
+    
+        
         // Adding child data
-        List<String> complete  = new ArrayList<String>();
-        complete.add("James: " + "Do Laundry");
-        complete.add("Jennifer: " + "Clean Bathroom");
-        complete.add("Jack: " + "Check Mailbox");
-        complete.add("James: " + "Clean Dishes");
-        complete.add("Jennifer: " + "Vacuum Floor");
+        complete.add(new Task(hi,"Kyle", "Mowed Lawn", 5));
+        complete.add(new Task(hi, "Sarah", "Cleaned bathroom", 5));
+        complete.add(new Task(hi, "James", "Washed dishes", 5));
+        
 
 
         
         
- 
-        List<String> reward = new ArrayList<String>();
-        reward.add("James: " + "Counter Strike");
-        reward.add("Jennifer: " + "Hello Kity");
-        reward.add("Jack: " + "Play Time");
-        reward.add("James: " + "League of Legends");
+ //reward data
+        reward.add(new Task("John", "League of Legends",0,true));
+        reward.add(new Task("Sarah", "Hello Kitty",0,true));
+        reward.add(new Task("Kyle", "Pokemon",0,true));
        
         // Adding child data
         listDataDisplay.add("Task List");

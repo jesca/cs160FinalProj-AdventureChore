@@ -15,10 +15,10 @@ public class ExpandableListAdapter extends BaseExpandableListAdapter {
 	private Context _context;
     private List<String> _listDataHeader; // header titles
     // child data in format of header title, child title
-    private HashMap<String, List<String>> _listDataChild;
+    private HashMap<String, List<Task>> _listDataChild;
  
     public ExpandableListAdapter(Context context, List<String> listDataHeader,
-            HashMap<String, List<String>> listChildData) {
+            HashMap<String, List<Task>> listChildData) {
         this._context = context;
         this._listDataHeader = listDataHeader;
         this._listDataChild = listChildData;
@@ -39,19 +39,34 @@ public class ExpandableListAdapter extends BaseExpandableListAdapter {
     public View getChildView(int groupPosition, final int childPosition,
             boolean isLastChild, View convertView, ViewGroup parent) {
  
-        final String childText = (String) getChild(groupPosition, childPosition);
- 
+       // final String childText = (String) getChild(groupPosition, childPosition);
+    	final Task childText = (Task) getChild(groupPosition, childPosition);
+    	String childName = childText.getChild();
+    	String choreName = childText.getName(); // name = name of the task
+    	String rewardName = childText.getReward();
+    	
         if (convertView == null) {
             LayoutInflater infalInflater = (LayoutInflater) this._context
                     .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             convertView = infalInflater.inflate(R.layout.list_item, null);
         }
  
-        TextView txtListChild = (TextView) convertView
-                .findViewById(R.id.lblListItem);
+        TextView child = (TextView) convertView
+                .findViewById(R.id.childName);
+        TextView corr = (TextView) convertView
+                .findViewById(R.id.choreName);
+        
  
-        txtListChild.setText(childText);
-        return convertView;
+        if (groupPosition==0) {
+        	child.setText(childName);
+        	corr.setText(choreName);
+        }
+        if (groupPosition==1) {
+        	child.setText(childName);
+        	corr.setText(rewardName);
+        }
+    	return convertView;
+
     }
  
     @Override
